@@ -40,7 +40,7 @@ def wipe():
 def download():
     return send_from_directory(
         directory="static",
-        path="shotsizes.pdf",
+        path="pruefungen.zip",
         as_attachment=True
     )
 
