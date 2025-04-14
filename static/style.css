@@ -22,6 +22,11 @@ body, html{
     overflow: hidden;
 }
 
+::selection{
+    background: var(--acd);
+    color: var(--bgd);
+}
+
 .frame{
     width: 100vw;
     height: 100vh;
@@ -140,7 +145,7 @@ body, html{
     color: var(--fgl);
 }
 
-.sidebar .bottom-btns .upgrade-btn{
+.upgrade-btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,6 +158,9 @@ body, html{
     color: var(--bg);
     border-radius: var(--brad);
     cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
 }
 
 .frame .sharing{
@@ -377,6 +385,55 @@ body, html{
     cursor: pointer;
 }
 
+.name-picker{
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    /* aspect-ratio: 2; */
+    width: 20vw;
+    background-color: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: var(--brad);
+    padding: 2vh;
+    box-sizing: border-box;
+    z-index: 15;
+}
+
+.name-picker option {
+    background-color: var(--bg);
+    color: var(--fg); /* z.B. white oder black */
+    font-size: 1rem;
+}
+
+.name-picker select {
+    padding: 1vh;
+    width: 100%;
+    background-color: var(--bg);
+    color: var(--fg);
+    border: none;
+    font-size: 1rem;
+    border-radius: calc(.75*var(--brad));
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 0 2px var(--border);
+}
+
+.blur-layer{
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.1); /* leicht transparent */
+    backdrop-filter: blur(4px); /* <- das ist der wichtige Part */
+    -webkit-backdrop-filter: blur(4px); /* Safari support */
+    z-index: 12;
+}
+
 @media (width < 2200px){
     .search{
         width: 30% !important;
@@ -390,6 +447,10 @@ body, html{
     
     .search{
         width: 75% !important;
+    }
+
+    .name-picker{
+        width: 40%;
     }
 }
 
@@ -405,6 +466,10 @@ body, html{
     .sharing .search-box, .sharing .dashboard, .sharing .documents{
         padding-right: .75vh;
         padding-left: .75vh;
+    }
+
+    .name-picker{
+        width: 60%;
     }
 }
 
@@ -423,5 +488,9 @@ body, html{
 
     .documents .docs-grid .icon{
         display: none !important;
+    }
+
+    .name-picker{
+        width: 90%;
     }
 }

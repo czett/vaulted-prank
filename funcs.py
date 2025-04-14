@@ -26,6 +26,14 @@ def get_all_names() -> list:
             result = cur.fetchall()  # Alle Ergebnisse holen
             names = [row[0] for row in result]  # Extrahieren der Namen aus den Ergebnissen
             return names
+
+def get_all_available_names() -> list:
+    with psycopg.connect(DATABASE_URL) as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT name FROM users WHERE downloaded = FALSE")  # Abfrage aller Namen
+            result = cur.fetchall()  # Alle Ergebnisse holen
+            names = [row[0] for row in result]  # Extrahieren der Namen aus den Ergebnissen
+            return names
         
 def set_downloaded_true(name: str) -> None:
     with psycopg.connect(DATABASE_URL) as conn:
