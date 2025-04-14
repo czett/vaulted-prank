@@ -36,6 +36,10 @@ def wipe():
 
     return redirect("/")
 
+@app.route("/share/link/sowi-pruefungen/vbwofhs")
+def gibberish():
+    return redirect("/")
+
 @app.route("/download")
 def download():
     return send_from_directory(
