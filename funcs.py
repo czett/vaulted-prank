@@ -15,7 +15,7 @@ def has_downloaded(name: str) -> bool:
             cur.execute("SELECT downloaded FROM users WHERE name = %s", (name,))
             result = cur.fetchone()
             if result:
-                return result[0]  # True oder False aus DB
+                return result[0]
             else:
                 raise ValueError(f"Nutzer '{name}' wurde nicht gefunden.")
 
