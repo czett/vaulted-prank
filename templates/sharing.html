@@ -74,69 +74,34 @@
             <div class="title">All shared documents</div>
             <div class="subtitle">Overview of every file or document that has been shared with you.</div>
             
-            <div class="docs-grid">
-                <div class="legend">
-                    <div class="icon">
-                        <span class="material-symbols-outlined">description</span>
-                    </div>
-                    <div class="name">Name</div>
-                    <div class="upload-date">Uploaded</div>
-                    <div class="updated">Last Updated</div>
-                    <div class="download">
-                        <div>Download</div>
-                    </div>
-                </div>
-                <div class="document">
-                    <div class="icon">
-                        <div class="icon-wrap">
+            <div class="docs-grid-wrapper">
+                <div class="docs-grid">
+                    <div class="legend">
+                        <div class="icon">
                             <span class="material-symbols-outlined">description</span>
                         </div>
-                    </div>
-                    <div class="name">Annual-report-Q4-Q23.pdf</div>
-                    <div class="upload-date">Apr 14, 2025</div>
-                    <div class="updated">two hours ago</div>
-                    <div class="download">
-                        <span class="material-symbols-outlined">download</span>
-                    </div>
-                </div>
-                <div class="document">
-                    <div class="icon">
-                        <div class="icon-wrap">
-                            <span class="material-symbols-outlined">description</span>
+                        <div class="name">Name</div>
+                        <div class="upload-date">Uploaded</div>
+                        <div class="updated">Last Updated</div>
+                        <div class="download">
+                            <div>Download</div>
                         </div>
                     </div>
-                    <div class="name">Annual-report-Q4-Q23.pdf</div>
-                    <div class="upload-date">Apr 14, 2025</div>
-                    <div class="updated">two hours ago</div>
-                    <div class="download">
-                        <span class="material-symbols-outlined">download</span>
-                    </div>
-                </div>
-                <div class="document">
-                    <div class="icon">
-                        <div class="icon-wrap">
-                            <span class="material-symbols-outlined">description</span>
+                    {% for i in range(15)%}
+                    <div class="document">
+                        <div class="icon">
+                            <div class="icon-wrap">
+                                <span class="material-symbols-outlined">description</span>
+                            </div>
+                        </div>
+                        <div class="name">Annual-report-Q4-Q23.pdf</div>
+                        <div class="upload-date">Apr 14, 2025</div>
+                        <div class="updated">two hours ago</div>
+                        <div class="download">
+                            <span class="material-symbols-outlined">download</span>
                         </div>
                     </div>
-                    <div class="name">Annual-report-Q4-Q23.pdf</div>
-                    <div class="upload-date">Apr 14, 2025</div>
-                    <div class="updated">two hours ago</div>
-                    <div class="download">
-                        <span class="material-symbols-outlined">download</span>
-                    </div>
-                </div>
-                <div class="document">
-                    <div class="icon">
-                        <div class="icon-wrap">
-                            <span class="material-symbols-outlined">description</span>
-                        </div>
-                    </div>
-                    <div class="name">Annual-report-Q4-Q23.pdf</div>
-                    <div class="upload-date">Apr 14, 2025</div>
-                    <div class="updated">two hours ago</div>
-                    <div class="download">
-                        <span class="material-symbols-outlined">download</span>
-                    </div>
+                    {%endfor%}
                 </div>
             </div>
         </div>

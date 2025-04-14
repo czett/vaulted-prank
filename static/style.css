@@ -19,6 +19,7 @@
 body, html{
     width: 100vw;
     margin: 0;
+    overflow: hidden;
 }
 
 .frame{
@@ -279,36 +280,49 @@ body, html{
     font-size: 1.1rem;
 }
 
-.sharing .documents{
+.sharing .documents {
     width: 100%;
     box-sizing: border-box;
     padding: 1vh 2vh;
     position: absolute;
-    max-height: 50%;
+    height: 50%;
     transform: translateX(-50%);
     inset: auto auto 2vh 50%;
+    overflow: hidden;  /* Verhindert Overflow des gesamten Containers */
 }
 
-.sharing .documents .title{
+.sharing .documents .title {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: .5vh;
 }
 
-.sharing .documents .subtitle{
+.sharing .documents .subtitle {
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: 2vh;
 }
 
-.sharing .documents .docs-grid{
+.sharing .documents .docs-grid-wrapper {
+    width: 100%;
+    height: calc(100% - 2vh);
+    overflow: hidden;
+}
+
+.sharing ::-webkit-scrollbar{
+    display: none;
+}
+
+.sharing .documents .docs-grid {
     display: flex;
+    border: 2px solid var(--border);
     justify-content: start;
     align-items: start;
     width: 100%;
     flex-direction: column;
     border-radius: var(--brad);
-    border: 2px solid var(--border);
+    max-height: calc(100% - 4vh);
+    overflow-y: scroll;
 }
 
 .sharing .documents .docs-grid .document, .sharing .documents .docs-grid .legend{
@@ -361,4 +375,53 @@ body, html{
 
 .sharing .documents .docs-grid .document .download{
     cursor: pointer;
+}
+
+@media (width < 2200px){
+    .search{
+        width: 30% !important;
+    }
+}
+
+@media (width < 1600px){
+    .frame .sidebar{
+        width: 25% !important;
+    }
+    
+    .search{
+        width: 75% !important;
+    }
+}
+
+@media (width < 1200px){
+    .frame .sidebar{
+        display: none;
+    }
+    
+    .search{
+        width: 100% !important;
+    }
+
+    .sharing .search-box, .sharing .dashboard, .sharing .documents{
+        padding-right: .75vh;
+        padding-left: .75vh;
+    }
+}
+
+@media (width < 700px){
+    .documents .docs-grid .updated{
+        display: none;
+    }
+    
+    .documents .docs-grid .download{
+        max-width: 15% !important;
+    }
+    
+    .documents .docs-grid .name{
+        padding-left: 1vh;
+    }
+
+    .documents .docs-grid .icon{
+        display: none !important;
+    }
 }

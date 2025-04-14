@@ -8,3 +8,5 @@ def start():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5050)
+
+#dSCB69#0|H%=
