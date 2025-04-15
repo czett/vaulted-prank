@@ -5,7 +5,7 @@ A minimal file-sharing platform designed for exclusive distribution — because 
 
 > 🕵️‍♂️ Built for a small group. Tracked individually. Delivered quietly.
 
-## 🌐 Live: [vaulted.website](https://vaulted.website)
+## 🌐 Was Live (15th of April, 2025) at [vaulted.website](https://vaulted.website)
 
 ---
 
